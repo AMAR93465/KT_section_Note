@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Installation Guide Index</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fff);
+      margin: 0;
+      padding: 0;
+    }
+
+    .index {
+      background-color: #ffffff;
+      padding: 30px;
+      margin: 40px auto;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .index h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .index ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .index li {
+      margin: 15px 0;
+    }
+
+    .index a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #007acc;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .index a:hover {
+      color: #005999;
+    }
+
+    section {
+      padding: 60px 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+    section img {
+    max-width: 40%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+    }
+  .custom{
+  max-width: 40%;         /* Set the width */
+  height: auto;         /* Keep aspect ratio */
+  margin: auto;
+  border: 2px solid #444;  /* Border */
+  border-radius: 10px;  /* Rounded corners */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Shadow */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.custom-img:hover {
+  transform: scale(1.05);  /* Slight zoom on hover */
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="index">
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#pre-install">Pre Installation</a></li>
+      <li><a href="#post-install">Post Installation</a></li>
+      <li><a href="#commands">Important Commands & Plain OS installation flow</a></li>
+      <li><a href="#hit-tool">HIT Tool</a></li>
+      <li><a href="#common-tool">Common Tool</a></li>
+    </ul>
+  </div>
+
+  <section id="pre-install">
+    <h2>Pre Installation</h2>
+    <p>Booting process means starting up a computer . It happens when you turn on computer and it loads the operating system.</p>
+	<p>Ø First your main OS isn't installed yet , So you need a bootable environment like WinPE.</p>
+	<p>Ø So this Windows pre-installation will do things like start installation process, positioning the hard drives (so the operating system knows where to store files, Keep things organized, tells windows where to go during installation, run installation tools.</p>
+	
+        <p>Windows Pre-installation is a special setup before a actual windows installation.</p>
+
+        In this booting process only we will provide what are the requirements we need to build OS.
+        It is in default Plain OS without hardwares, without any applications.
+        On top of that we will add applications, drivers, and what are the services to be enabled and disabled.
+
+
+    <p>Example: if you are planning to paint your home , before paint you will clean the room and cover the things then prepare the wall .</p>
+    <p><h3>Pre-install : Applications,BaseOS,Microsoft cumulative Update,PRE,Sys prep,firewall</h3></p>
+  </section>
+
+  <section id="post-install">
+    <h2>Post Installation</h2>
+    <p>Post-installation refers to everything that happens after you install the operating system (OS)  especially Windows  to get the system ready for actual use.
+    <p>Post-installation makes a freshly installed OS usable, secure, and personalized.</p>
+
+    <p>We do install applications ,Create User Accounts, connect to network , install drives , configure security.</p>
+    <p><h3>Post-install : Drives, images ,Post installation</h3></p>
+
+</p>
+</section>
+
+  <section id="commands">
+  <h2>Important Commands</h2>
+  <p><strong>RUN Windows Commands:</strong></p>
+  <ul>
+    <li><code>Cmd</code> : Command Prompt</li>
+    <li><code>powershell</code> : PowerShell</li>
+    <li><code>msconfig</code> : System Configuration</li>
+    <li><code>services.msc</code> : Services Manager</li>
+    <li><code>taskmgr</code> : Task Manager</li>
+    <li><code>regedit</code> : Registry Editor</li>
+    <li><code>firewall.cpl</code> : Windows Defender Firewall (Control Panel)</li>
+    <li><code>wf.msc</code> : Windows Defender Firewall with Advanced Security</li>
+    <li><code>explorer</code> : Open File Explorer (Win + E)</li>
+  </ul>
+
+  <p><strong>Commands for CMD:</strong></p>
+  <ul>
+    <li><code>sc query</code> : Shows all services and their statuses</li>
+    <li><code>sc query &lt;servicename&gt;</code> : Check specific service</li>
+    <li><code>gpresult /R</code> : Shows applied group policies for the current user and machine</li>
+    <li><code>gpresult /H C:\Users\Public\policy.html</code> : Generates detailed report in HTML</li>
+    <li><code>wmic qfe list</code> : Shows all installed updates (including cumulative updates)</li>
+  </ul>
+<h3>OS Installation Flow (Based on Hardware)</h3>
+<ol>
+  <li>There are two types of hardware:
+    <ul>
+      <li><strong>Legacy</strong> – N2FS</li>
+      <li><strong>UEFI</strong> – BIOS – FAT32</li>
+    </ul>
+  </li>
+  <li>According to the hardware type, copy the bootable files and paste them into a USB drive.</li>
+  <li>Insert the USB into the hardware system.</li>
+  <li>Restart the PC. When the Philips logo appears, keep pressing the Boot key.
+    <br><em>(For Caronary tool, the key is <strong>F11</strong>)</em>
+  </li>
+  <li>After entering the user and password, a popup will appear. Select the USB from that menu.</li>
+  <li>The installation process will begin and complete successfully.</li>
+</ol>
+
+</section>
+
+
+  <!-- <section id="commands">
+    <h2>Important Commands</h2>
+    <p><script>
+       <p> RUN windows cmds:
+ 
+Cmd : command prompt
+powershell : PowerShell
+msconfig  :  system configuration
+services.msc  :  services manager
+taskmgr  :  Task Manager
+regedit  :  registry editor
+firewall.cpl  :  windows defender firewall settings (control panel)
+wf.msc :  windows defender firewall with advanced security
+explorer : open file explorer (win + E)
+ 
+Commands for cmd:
+ 
+sc query  :  this shows all services and their statuses
+sc query <servicename> : to check specific service
+
+gpresult /R :  This shows applied group policies for the current user and machine
+gpresult  /H C: \user\public\policy.html  :  to generate a detailed report in HTML.
+ 
+wmic qfe list : This shows all installed updates, including cumulative updates.</p>
+
+    </script></p>
+  </section> -->
+
+  <section id="hit-tool">
+    <h2>HIT Tool</h2>
+    <p>HIT tool is a OS  hardening tool through this we can build an Operating System .According the requirement we create the modules like drives ,applications etc.</p>
+    <img src="./images/hit interface.png" alt="">
+    <p>HIT (Houston Installation Tool) is a Windows OS deployment tool, used for pre-installation and post-installation process. And also Automate and standardize the installation of Windows , Install device-specific drivers, software, and settings.</p>
+    <p>
+        OS : which contains operating systems here we can check for any updates.
+
+<p>Packages : Here we can disable the keys if we want .</p>
+
+<p>DRV (Drivers) : Here we can create a module like chip set drivers, Graphics, Audio drivers, USB drivers and Antivirus 3rd party drivers.</p>
+
+<p>APP(Application) : We can install the applications like  .NET, VC ++ and antivirus Applications.
+    we can add default applications,and also 3rd party applications.
+</p>
+
+<p>SCR: for creating configurations, PXE, Image filings, and Creating a page and adding a IP address all these we can do in this module.</p>
+
+<p>QFE(cumulative Update): Every 2nd Tuesday they release new cumulative patch.</p>
+
+<p>SRV(services) : Services in windows need to be in manual, automatic, enable or disable we can set these things .</p>
+
+<p>TSK(task scheduling) : here we can schedule a task to perform . For example : if we want to restrict the firewall then we can schedule a task to restrict.</p>
+
+<p>FWL : firewall means whatever the test coming from outside we will restrict it and if we need to go out to connect other devices we will make some restrictions.</p>
+
+<p>POL(Polices) : it is like to add restrictions for example : if you want to create your own user login id, that can be used by others also within a limit .</p>
+
+<p>DOD: Department of defense, every country have their own restrictions and policies depending upon them we set the DOD complaints.</p>
+
+<p>TLS: configure what type of polices like what to open and not, user rights , user restrictions can be done here.</p>
+<p>DPL : deployment model it is final step of OS , here we will add WinPE environment along with applications.</p>
+    </p>
+
+<p>
+    Open HIT tool   ->   select file    ->   Load Bos   ->    There you will see different Projects -> select Allura project   ->   Jagur ->   CoffeLake  - >  here there will be 5 files each one related to different PC   ->   Host (in this last one is latest updated one open it -> 
+ 
+<p>Then hit tool interface will open like below : </p>
+<img src="./images/hit interface.png" alt="">
+<p>
+    <p><h4>Check the DRV (drivers in pic ):</h4></p>
+
+<p>The tick mark boxes are the requirements which we have modified.</p>
+<p>For some module we have created instance 0,instance 1 ,instance 2, instance 3 based on hardware specification we check with diff instances .</p>
+<p>According to requirement we use multiple instancess</p>
+
+</p>
+<p><h4>Service Module<h4></p>
+<img src="./images/hit services.png" alt="">
+<p>If we move to SRV (services) : here we can change the startup type by automatic, manual, disable. Then save , it will be saved as a latest updated module.</p>
+</p>
+<p><h4>To open previous QFE module:</h4></p>
+<p><h5>Open HIT module editor - > file -> open -> IGT_LCM_OS -> IGT_OS_LCM - > Res -> HIT -> Operating system -> QFE -> XML -> select last xml file because it is most recently updated file.</h5></p>
+<p>To create new module : file   ->  new  ->  select untitled_0   ->   comparing with previous module create a new module with id, name, description</p>
+<img src="./images/HIT tool QFE.png" alt="">
+<p>Main : we add module ID, name :in name we mention year, month, Cumulative Update for Windows 10 Version 1809 for x64-based Systems (KB5058392)</p>
+<p>Microsoft will send cumulative update through one KBs number by scanning that with mbsc scan we can find the what are the updates.</p>
+<p>If we scan that KBs number with mbsc scan it will show all .NET, missing KBs
+At stage 5 or 6 KBs number scanning will be done before hardening part.</p>
+<p>Parameters : based upon the requirement we will add the parameter, by right click add select
+ </p>
+ <p>Build : in build there are stages from 1 to 10 at every stage some execution will happen to install OS </p>
+ <p>Verification : through this verification we can check weather the installation done or not , verified or not.</p>
+<p>There is a document which contain all requirements and we check all requirements with HIT tool modules.</p>
+<p>if any new requirement is added then we create a new module for that and we save it in .xml format in repository.</p>
+  </section>
+
+  <section id="common-tool">
+    <h2>Common Tool</h2>
+    <pre>
+HIT and CommonOS tool both are developed by Philips (inhouse tool) created for OS creation and deployment. by using this tools we can develop our customized OS.
+
+According to the requirements we use this tools,
+HIT is the legacy tool from IGT and currently we are using only for releasing LTSC 2019 OS releases. but HIT tool is capable of having any OS version.
+Starting from LTSC 2021, we have migrated to CommonOS tooling and the releases happening from Common Compute team.
+
+In hit tool we create modules as per requirement but in common OS we create Attributes and combination of attributes are component.
+
+Sys prep means after complete installation of OS , some process will still go on in background till the desktop come (switch on) in between this process Sys prep will execute ,whatever I need to install like drives ,applications and everything in this final stage of the OS prep process.
+
+Pre-installation : applications, BaseOS, MCU ( microsoft cumulative update), SYS prep, firewall
+
+Post-installation : Drives, Images , Post install
+
+CommonOS repository :
+
+OS --> work  --> OS  -->  source  -->  src  -->  IGI  -->  then there you see different projects
+
+All are saved in the form of .xml files and we use those modules.
+
+    </pre>
+  <img src="./images/commonos.png" alt="">
+  <pre>
+<h3>To Open ISO Config : -</h3> 
+
+Click on open -->  select ISO config  --> right side  in search bar type any project name -- > select the project which is appaired in left -- > there you can check pre installation and post installation attributes that are developed.
+
+Then to check what are the attributes are developed inside the pre-installation or post-installation 
+
+Click on pre-installation tab  -->  copy the code which is at top  (SO43IC9A40)  -->  close the popup --> click on open select OS config -->  in right search bar past the code then in left it will visible open it there you can check all the applications, drives, OS-update, pre-installation and more attribute that are developed .
+  </pre>
+  </section>
+
+<pre>
+  <h3>Then to check what are the attributes are developed inside the Pre-install</h3>
+
+<img src="./images/preinstall commonos.png" alt="" class="custom">
+<p>click first option  -  copy the code which is present in top (OS43IC9)  -  close that pop up  -  click open  -  select OS config  -  in left paste that code </p>
+<p>Then in left you can check  -  open that there you can check all like applications,BaseOS,Firewall,OS-update,Pre-install which are developed.</p>
+
+
+</pre>
+<h3>TO CREATE NEW ATTRIBUTE :</h3>
+<img src="./images/commonOS attr.png" alt="" class="custom">
+
+
+<pre>
+  
+  
+
+    Click on New -->  interface will open like above
+
+    Id : id will be created automatically
+    Name :we can give it as requirement name
+    Version : automatically
+    Type : select the type of attribute going to develop like derive, application, pre-install, post-install, Base_OS, firewall
+    Value : path from where we are verifying it.
+            URL : It will take automatically from artifactory with .exe file, and that .exe file should be run in a file /S (silently in background)
+            That will be mention in Parameter.
+
+            script : first copy the name of the requirement , Open HIT tool because previously we were using HIT tool So it contains most modules.
+                      open HIT search and search for requirement .
+                    Open  - > IGT - Res  -  HIT - OS  -  BOS  -  Project name (ex : Allura) -  jaguar  -  coffelake  -  FV 
+                    then according to your new module type select, like APP,DRV,SRV etc. 
+                    ex : if it is App requremen then open search check , present then copy requirement Tag and copy in value (common os value) 
+
+    Parameters : where it should be saved in drive
+
+    For Applications, drives it will take the path directly from artifactory 
+
+    If selected value type as URL --> it will automatically take from artifatory as  .exe file 
+    And that .exe file should be run in a file /S (In silent) that is mentioned in parameters.
+
+    If value type is script : then we can give it manually
+    Description : we can give anything related to it
+
+    Test case :
+    Name : testcase no.req name
+    Description : related to attribute
+    Group : type of attribute that we are going to develop
+    Script: verifies the input wheater it is expected value or not 
+</pre>
+
+</body>
+</html>
